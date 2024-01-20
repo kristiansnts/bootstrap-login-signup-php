@@ -10,3 +10,4 @@ CREATE TABLE users (
 
 -- DUMP DATA
 INSERT INTO users (username, pwd, email) VALUES ('admin', 'admin', 'admin@mail.com');
+
