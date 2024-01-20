@@ -101,16 +101,20 @@
 	                            <div class="form-bottom">
 				                    <form role="form" action="" method="post" class="registration-form">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                    		<label class="sr-only" for="form-username">Username</label>
+				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control" id="form-username">
+				                        </div>
+										<div class="form-group">
+											<label class="sr-only" for="form-email">Email</label>
+											<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+										</div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        	<label class="sr-only" for="form-confirm-password">Confirm Password</label>
+				                        	<input type="password" name="form-confirm-password" placeholder="Confirm Password" class="form-confirm-password form-control" id="form-confirm-password">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
