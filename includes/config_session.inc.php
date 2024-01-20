@@ -11,3 +11,21 @@ session_set_cookie_params([
 ]);
 
 session_start();
+
+if(isset($_SESSION["user_id"])){
+
+} else {
+    if(!isset($_SESSION["last_regenerate"])){
+        regenerate_session_id();
+    } else {
+        $interval = 60 * 30;
+        if (time() - $_SESSION["last_regenerate"] >= $interval){
+            regenerate_session_id();
+        }
+    }
+}
+
+function regenerate_session_id() {
+    session_regenerate_id(true);
+    $_SESSION["last_regenerate"] = time();
+}
