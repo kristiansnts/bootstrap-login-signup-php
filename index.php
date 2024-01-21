@@ -99,7 +99,7 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
+				                    <form role="form" action="includes/signup/signup.inc.php" method="post" class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
 				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control" id="form-username">
