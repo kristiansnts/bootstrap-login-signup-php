@@ -13,6 +13,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "signup_model.inc.php";
         require_once "signup_contr.inc.php";
 
+        // Error Handling
+        
 
     } catch (PDOException $e) {
         die("Query failed : " . $e->getMessage());
