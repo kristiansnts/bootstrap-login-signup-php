@@ -152,6 +152,10 @@ img { max-width: 100%; }
 	border-color: #19b9e7;
 }
 
+.row {
+	justify-content: center;
+}
+
 .social-login {
 	margin-top: 35px;
 }
