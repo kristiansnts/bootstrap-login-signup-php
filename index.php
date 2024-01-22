@@ -1,3 +1,10 @@
+<?php 
+
+	require_once "includes/config_session.inc.php";
+	require_once "includes/signup/signup_view.inc.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +95,8 @@
                         	
                         <div class="col-sm-5">
                         	
-                        	<div class="form-box">
+							<div class="form-box">
+								<?php check_signup(); ?>
                         		<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Sign up now</h3>
@@ -102,15 +110,24 @@
 				                    <form role="form" action="includes/signup/signup.inc.php" method="post" class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control" id="form-username">
+				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control <?php echo ($_SESSION["signup_errors"] && isset($_SESSION["signup_errors"]["form_username"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["username"])) ? $_SESSION["signup_data"]["username"] : ""; ?>" id="form-username">
+											<div id="validationServer03Feedback" class="invalid-feedback">
+												<?php check_errors_username(); ?>
+											</div>
 				                        </div>
 										<div class="form-group">
 											<label class="sr-only" for="form-email">Email</label>
-											<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+											<input type="text" name="form-email" placeholder="Email..." class="form-email form-control <?php echo ($_SESSION["signup_errors"]&& isset($_SESSION["signup_errors"]["form_email"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["email"])) ? $_SESSION["signup_data"]["email"] : ""; ?>" id="form-email">
+											<div id="validationServer03Feedback" class="invalid-feedback">
+												<?php check_errors_email(); ?>
+											</div>
 										</div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password">
+				                        	<input type="password" name="form-password" placeholder="Password" class="form-password form-control <?php echo ($_SESSION["signup_errors"] && isset($_SESSION["signup_errors"]["form_pwd"])) ? "is-invalid" : ""; ?>" id="form-password">
+											<div id="validationServer03Feedback" class="invalid-feedback">
+												<?php check_errors_pwd(); ?>
+											</div>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-confirm-password">Confirm Password</label>

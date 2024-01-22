@@ -2,8 +2,24 @@
 
 declare(strict_types=1);
 
-function is_empty_field(string $username, string $email, string $pwd) {
-    if(empty($username) || empty($email) || empty($pwd)) {
+function is_empty_username(string $username) {
+    if(empty($username)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function is_empty_email(string $email) {
+    if(empty($email)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function is_empty_pwd(string $pwd) {
+    if(empty($pwd)) {
         return true;
     } else {
         return false;
@@ -40,4 +56,8 @@ function is_email_registered(object $pdo, string $email) {
     } else {
         return false;
     }
+}
+
+function create_user(object $pdo, string $username, string $email, string $pwd) {
+    set_user($pdo, $username, $email, $pwd);
 }

@@ -18,3 +18,15 @@ function get_email(object $pdo, string $email) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function set_user(object $pdo, string $username, string $email, string $pwd) {
+    $query = "INSERT INTO users (username, email, pwd) VALUES (:username, :email, :pwd);";
+    $stmt = $pdo->prepare($query);
+
+    $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
+
+    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":pwd", $hashedPwd);
+    $stmt->execute();
+}
