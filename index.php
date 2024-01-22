@@ -110,21 +110,21 @@
 				                    <form role="form" action="includes/signup/signup.inc.php" method="post" class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control <?php echo ($_SESSION["signup_errors"] && isset($_SESSION["signup_errors"]["form_username"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["username"])) ? $_SESSION["signup_data"]["username"] : ""; ?>" id="form-username">
+				                        	<input type="text" name="form-username" placeholder="Username" class="form-user-name form-control <?php echo (isset($_SESSION["signup_errors"]) && isset($_SESSION["signup_errors"]["form_username"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["username"])) ? $_SESSION["signup_data"]["username"] : ""; ?>" id="form-username">
 											<div id="validationServer03Feedback" class="invalid-feedback">
 												<?php check_errors_username(); ?>
 											</div>
 				                        </div>
 										<div class="form-group">
 											<label class="sr-only" for="form-email">Email</label>
-											<input type="text" name="form-email" placeholder="Email..." class="form-email form-control <?php echo ($_SESSION["signup_errors"]&& isset($_SESSION["signup_errors"]["form_email"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["email"])) ? $_SESSION["signup_data"]["email"] : ""; ?>" id="form-email">
+											<input type="text" name="form-email" placeholder="Email..." class="form-email form-control <?php echo (isset($_SESSION["signup_errors"]) && isset($_SESSION["signup_errors"]["form_email"])) ? "is-invalid" : ""; ?>" value="<?php echo (isset($_SESSION["signup_data"]["email"])) ? $_SESSION["signup_data"]["email"] : ""; ?>" id="form-email">
 											<div id="validationServer03Feedback" class="invalid-feedback">
 												<?php check_errors_email(); ?>
 											</div>
 										</div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password" class="form-password form-control <?php echo ($_SESSION["signup_errors"] && isset($_SESSION["signup_errors"]["form_pwd"])) ? "is-invalid" : ""; ?>" id="form-password">
+				                        	<input type="password" name="form-password" placeholder="Password" class="form-password form-control <?php echo (isset($_SESSION["signup_errors"]) && isset($_SESSION["signup_errors"]["form_pwd"])) ? "is-invalid" : ""; ?>" id="form-password">
 											<div id="validationServer03Feedback" class="invalid-feedback">
 												<?php check_errors_pwd(); ?>
 											</div>
