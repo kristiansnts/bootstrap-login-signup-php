@@ -24,7 +24,7 @@ function check_errors_pwd() {
 function check_signup() {
     if(isset($_GET["signup"]) && $_GET["signup"] == "success") {
         unset($_SESSION["signup_data"]);
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Signup Success</strong> You can login now!.</div>';
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Signup Success</strong> You can login now!. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
     }
 }
 
