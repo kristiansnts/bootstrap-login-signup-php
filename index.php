@@ -2,6 +2,7 @@
 
 	require_once "includes/config_session.inc.php";
 	require_once "includes/signup/signup_view.inc.php";
+	require_once "includes/login/login_view.inc.php";
 
 ?>
 
@@ -64,6 +65,7 @@
                         <div class="col-sm-5">
                         	
                         	<div class="form-box">
+								<?php check_signin(); ?>
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Login to our site</h3>
@@ -77,11 +79,17 @@
 				                    <form role="form" action="includes/login/login.inc.php" method="post" class="login-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control <?php echo (isset($_SESSION["login_errors"]) && isset($_SESSION["login_errors"]["form-username"])) ? "is-invalid" : ""; ?>" id="form-username">
+											<div id="validationServer03Feedback" class="invalid-feedback">
+												<?php check_login_errors_username(); ?>
+											</div>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control <?php echo (isset($_SESSION["login_errors"]) && isset($_SESSION["login_errors"]["form-password"])) ? "is-invalid" : ""; ?>" id="form-password">
+											<div id="validationServer03Feedback" class="invalid-feedback">
+												<?php check_login_errors_pwd(); ?>
+											</div>
 				                        </div>
 				                        <button type="submit" class="btn mt-4">Sign in!</button>
 				                    </form>

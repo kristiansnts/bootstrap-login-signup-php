@@ -22,11 +22,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors["form-username"] = "Username is not registered!";
         }
         if(is_empty_pwd($pwd)) {
-            $errors["form-pasword"] = "Password is required!";
-        } else if(is_not_match($pwd, $hashedPwd)) {
-            $errors["form-pasword"] = "Username or Password not match!";
+            $errors["form-password"] = "Password is required!";
+        } else if(!is_user_not_registered($result) && is_not_match($pwd, $hashedPwd)) {
+            $errors["form-password"] = "Username or Password not match!";
         }
-        
+
         require_once "../config_session.inc.php";
 
         if($errors) {
@@ -41,9 +41,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         session_id($sessionId);
 
         $_SESSION["user_id"] = $result["id"];
-        $_SESSION["user_username"] = $result["username"];
+        $_SESSION["user_username"] = htmlspecialchars($result["username"]);
 
         $_SESSION["last_regenerate"] = time();
+
 
         header("Location: ../../index.php?signin=success");
         $pdo = null;
