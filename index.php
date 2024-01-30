@@ -62,7 +62,7 @@
                     </div>
                     
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 ">
                         	
                         	<div class="form-box">
 								<?php check_signin(); ?>
